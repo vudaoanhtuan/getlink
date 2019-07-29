@@ -11,7 +11,7 @@ def get_link_from_id(link_id):
 
     # get csrf value
     html_res = session.get('https://www.fshare.vn/file/'+link_id)
-    html = BeautifulSoup(html_res.text)
+    html = BeautifulSoup(html_res.text, "html.parser")
     csrf_value = html.select_one('#form-signup > input[type=hidden]')['value']
     
     # get link download
