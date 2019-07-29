@@ -6,13 +6,6 @@ import time
 from bs4 import BeautifulSoup
 
 def get_link_from_id(link_id):
-def get_link(url):
-    # get id from url
-    sid = re.search('/([\w]{10,})\??', url).groups()
-    if len(sid) != 1:
-        raise Exception("Invalid url")
-    link_id = sid[0]
-    
     # init session
     session = requests.Session()
 
